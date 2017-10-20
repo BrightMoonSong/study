@@ -1,0 +1,36 @@
+<!doctype html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <script type="text/javascript" src="js/angular.js" ></script>
+</head>
+<body ng-app="myApp" ng-controller='myFunction'>
+	<input type="text" ng-model="name" />
+<myfirst></myfirst>
+
+</body>
+</html>
+<script type="text/javascript">
+var app = angular.module("myApp",[]);
+	app.controller("myFunction",function($scope){
+		$scope.name="bobo";
+	})
+	
+	function myfirst(){
+		return{
+			//priority:0,//为数字，可选参数，指明指令优先级，单个DOM有多个指令，则优先级高的先执行；
+			restirct:'EA',//可选参数，E为元素，A为属性，C为类，M为注释，A为默认值；也可两个一起用。
+			scope:{},//当为false时候，儿子继承父亲的值，改变父亲的值，儿子的值也随之变化，反之亦如此。（继承不隔离）
+						  //当为true时候，儿子继承父亲的值，改变父亲的值，儿子的值随之变化，但是改变儿子的值，父亲的值不变。（继承隔离）
+						 //当为{}时候，没有继承父亲的值，所以儿子的值为空，改变任何一方的值均不能影响另一方的值。（不继承隔离）
+			template:'<div>{{name}}<input type="text" ng-model="name"><div>要放假了!我要回家了！！</div></div>',//一段html 文本。
+			//templateUrl:''//（1）一个代表HTML文件路径的字符串
+								   //（2）一个函数，可接受两个参数tElement和tAttrs（大致同上）
+			replace:false//布尔值，为true时封装标签不存在 ，为false时存在。
+		}
+	}
+	
+	
+	
+	app.directive("myfirst",myfirst);
+</script>

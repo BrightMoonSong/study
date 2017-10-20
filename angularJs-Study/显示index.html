@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html>
+
+	<head>
+		<meta charset="UTF-8">
+		<script type="text/javascript" src="js/angular.js"></script>
+		<title></title>
+	</head>
+
+	<body>
+<div id="fir">
+	
+</div>
+	</body>
+	<!--<body ng-app="myapp" ng-controller="bodd">
+		<div>
+			<img src="img/Star2.png" ng-repeat="res in manservic" />
+			<img src="img/Star1.png" ng-repeat="res in nullservic" />
+		</div>
+	</body>-->
+
+</html>
+<script>
+	//angular 方法
+	//	var app=angular.module("myapp", [])
+	//	app.controller("bodd",function($scope){
+	//		$scope.manservic=[];
+	//		$scope.nullservic=[];
+	//		var object={"sort":4};
+	//		try{
+	//			for(var i=0; i<object.sort;i++){
+	//				$scope.manservic.push(i)
+	//			}
+	//			for(var j=0;j<5-object.sort;j++){
+	//				$scope.nullservic.push(j)
+	//			}
+	//		}catch(e){
+	//		}
+	//		
+	//	})
+	var obj = { "sort": 2 };
+//原声 拼接字符串
+//	var a = document.getElementById("fir");
+//	var imgArry = '';
+//	for(var i = 0; i < obj.sort; i++) {
+//		imgArry += '<img src="img/Star2.png"/>';
+//	}
+//	for(var j = 0; j < 5 - obj.sort; j++) {
+//		imgArry += '<img src="img/Star1.png"/>';
+//	}
+//	a.innerHTML = imgArry;
+
+
+//原声生成节点方法
+var a=document.body;
+for(var i=0;i<obj.sort;i++){
+	var img=document.createElement("img");
+	img.src="img/Star2.png";
+	a.appendChild(img)
+}
+for(var j=0;j<5-obj.sort;j++){
+	var img1=document.createElement("img");
+	img1.src="img/Star1.png";
+		a.appendChild(img1);
+}
+
+
+</script>
